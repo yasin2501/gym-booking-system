@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Profile — IronCore Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="./css/member.css" />
+</head>
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h1>IronCore Fitness</h1>
+        <small>Member Portal</small>
+      </div>
+      <nav class="sidebar-nav">
+        <a data-nav="dashboard" href="./dashboard.html">Dashboard</a>
+        <a data-nav="classes" href="./classes.html">View Classes</a>
+        <a data-nav="bookings" href="./bookings.html">My Bookings</a>
+        <a data-nav="payments" href="./payments.html">Payments</a>
+        <a data-nav="profile" href="./profile.html">Profile</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button data-logout>Sign Out</button>
+      </div>
+    </aside>
+
+    <div class="page-content">
+      <header class="topbar card" style="display:none;">
+        <div>
+          <div class="brand">Member Profile</div>
+          <small><span data-user-name>Member</span></small>
+        </div>
+        <nav class="nav">
+          <a data-nav="dashboard" href="./dashboard.html">Dashboard</a>
+          <a data-nav="classes" href="./classes.html">View Classes</a>
+          <a data-nav="bookings" href="./bookings.html">My Bookings</a>
+          <a data-nav="payments" href="./payments.html">Payments</a>
+          <a data-nav="profile" href="./profile.html">Profile</a>
+          <button data-logout>Logout</button>
+        </nav>
+      </header>
+
+      <div class="page-header">
+        <h1>Profile</h1>
+        <p>Update your personal information.</p>
+      </div>
+
+      <section class="card" style="max-width: 700px;">
+        <h2>Profile Details</h2>
+        <div id="message"></div>
+        <form id="profileForm" class="grid two">
+          <div>
+            <label>First Name</label>
+            <input name="first_name" required />
+          </div>
+          <div>
+            <label>Last Name</label>
+            <input name="last_name" required />
+          </div>
+          <div>
+            <label>Email Address</label>
+            <input name="email" type="email" required />
+          </div>
+          <div>
+            <label>Phone</label>
+            <input name="phone" placeholder="Optional" />
+          </div>
+          <div style="grid-column: 1 / -1;">
+            <button type="submit">Save Profile</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+  <script type="module" src="./js/profile.js"></script>
+</body>
+</html>
