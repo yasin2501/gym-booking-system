@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trainer Dashboard — IronCore Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="./css/trainer.css" />
+</head>
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h1>IronCore Fitness</h1>
+        <small>Trainer Portal</small>
+      </div>
+      <nav class="sidebar-nav">
+        <a data-nav="dashboard" href="./dashboard.html">Dashboard</a>
+        <a data-nav="classes" href="./classes.html">My Classes</a>
+        <a data-nav="participants" href="./participants.html">Participants</a>
+        <a data-nav="profile" href="./profile.html">Profile</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button data-logout>Sign Out</button>
+      </div>
+    </aside>
+
+    <div class="page-content">
+      <header class="topbar card" style="display:none;">
+        <div>
+          <div class="brand">Trainer Dashboard</div>
+          <small>Welcome, <span data-user-name>Trainer</span></small>
+        </div>
+        <nav class="nav">
+          <a data-nav="dashboard" href="./dashboard.html">Dashboard</a>
+          <a data-nav="classes" href="./classes.html">My Classes</a>
+          <a data-nav="participants" href="./participants.html">Participants</a>
+          <a data-nav="profile" href="./profile.html">Profile</a>
+          <button data-logout>Logout</button>
+        </nav>
+      </header>
+
+      <div class="page-header">
+        <h1>Dashboard</h1>
+        <p>Welcome back, <span data-user-name>Trainer</span>. Here's your teaching overview.</p>
+      </div>
+
+      <section class="card">
+        <h2>My Teaching Overview</h2>
+        <div id="summary" class="list"></div>
+      </section>
+    </div>
+  </div>
+  <script type="module" src="./js/dashboard.js"></script>
+</body>
+</html>

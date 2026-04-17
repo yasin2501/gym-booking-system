@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Payments — IronCore Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="./css/admin.css" />
+</head>
+
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h1>IronCore Fitness</h1>
+        <small>Admin Panel</small>
+      </div>
+      <nav class="sidebar-nav">
+        <a data-nav="dashboard" href="./dashboard.html">Dashboard</a>
+        <a data-nav="users" href="./users.html">Users</a>
+        <a data-nav="trainers" href="./trainers.html">Trainers</a>
+        <a data-nav="classes" href="./classes.html">Classes</a>
+        <a data-nav="bookings" href="./bookings.html">Bookings</a>
+        <a data-nav="payments" href="./payments.html">Payments</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button data-logout>Sign Out</button>
+      </div>
+    </aside>
+
+    <div class="page-content">
+      <header class="topbar card" style="display:none;">
+        <div>
+          <div class="brand">Manage Payments</div>
+        </div>
+        <nav class="nav">
+          <a data-nav="dashboard" href="./dashboard.html">Dashboard</a>
+          <a data-nav="users" href="./users.html">Users</a>
+          <a data-nav="trainers" href="./trainers.html">Trainers</a>
+          <a data-nav="classes" href="./classes.html">Classes</a>
+          <a data-nav="bookings" href="./bookings.html">Bookings</a>
+          <a data-nav="payments" href="./payments.html">Payments</a>
+          <button data-logout>Logout</button>
+        </nav>
+      </header>
+
+      <div class="page-header">
+        <h1>Payment Management</h1>
+        <p>View payment statistics and generate daily reports.</p>
+      </div>
+
+      <section class="grid two">
+        <article class="card">
+          <h2>Statistics</h2>
+          <div id="stats" class="list"></div>
+        </article>
+        <article class="card">
+          <h2>Daily Report</h2>
+          <form id="dailyForm" class="row">
+            <input name="date" type="date" required style="max-width: 200px;" />
+            <button type="submit">Load Report</button>
+          </form>
+          <div id="dailyReport" class="list" style="margin-top: 14px;"></div>
+        </article>
+
+        <article class="card" style="grid-column: 1 / -1; margin-top: 20px;">
+          <h2>Process Payment or Refund</h2>
+          <p style="margin-bottom: 16px; font-size: 0.9rem; color: var(--ink-muted);">Since you are an Admin, you can
+            manually process a payment for a booking or issue a refund using the Booking ID or Payment ID.</p>
+          <div id="actionMessage"></div>
+
+          <div class="grid two">
+            <!-- Process Payment Form -->
+            <form id="processPaymentForm" class="list"
+              style="padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: rgba(255,255,255,0.02);">
+              <h3 style="margin-bottom: 8px;">Mark Booking as Paid</h3>
+              <div>
+                <label>Booking ID</label>
+                <select name="booking_id" id="bookingSelect" required>
+                  <option value="">Loading pending bookings...</option>
+                </select>
+              </div>
+              <div class="row">
+                <div style="flex: 1;">
+                  <label>Amount (RM)</label>
+                  <input type="number" step="0.01" name="amount" id="amountInput" placeholder="Must match class price"
+                    required />
+                </div>
+                <div style="flex: 1;">
+                  <label>Method</label>
+                  <select name="payment_method" required>
+                    <option value="cash">Cash</option>
+                    <option value="bank_transfer">Bank Transfer</option>
+                    <option value="credit_card">Credit Card / POS</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-activate" style="margin-top: 8px;">Process Payment</button>
+            </form>
+
+            <!-- Refund Payment Form -->
+            <form id="refundPaymentForm" class="list"
+              style="padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: rgba(255,255,255,0.02);">
+              <h3 style="margin-bottom: 8px;">Issue Refund</h3>
+              <div>
+                <label>Completed Payment</label>
+                <select name="payment_id" id="refundSelect" required>
+                  <option value="">Loading completed payments...</option>
+                </select>
+              </div>
+              <div>
+                <label>Reason (Optional)</label>
+                <input type="text" name="reason" placeholder="e.g. Customer requested cancellation" />
+              </div>
+              <button type="submit" class="btn btn-delete" style="margin-top: 8px;">Process Refund</button>
+            </form>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+  <script type="module" src="./js/payments.js"></script>
+</body>
+
+</html>

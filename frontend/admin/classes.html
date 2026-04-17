@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Classes — IronCore Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="./css/admin.css" />
+</head>
+
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h1>IronCore Fitness</h1>
+        <small>Admin Panel</small>
+      </div>
+      <nav class="sidebar-nav">
+        <a data-nav="dashboard" href="./dashboard.html">Dashboard</a>
+        <a data-nav="users" href="./users.html">Users</a>
+        <a data-nav="trainers" href="./trainers.html">Trainers</a>
+        <a data-nav="classes" href="./classes.html">Classes</a>
+        <a data-nav="bookings" href="./bookings.html">Bookings</a>
+        <a data-nav="payments" href="./payments.html">Payments</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button data-logout>Sign Out</button>
+      </div>
+    </aside>
+
+    <div class="page-content">
+      <header class="topbar card" style="display:none;">
+        <div>
+          <div class="brand">Manage Classes</div>
+        </div>
+        <nav class="nav">
+          <a data-nav="dashboard" href="./dashboard.html">Dashboard</a>
+          <a data-nav="users" href="./users.html">Users</a>
+          <a data-nav="trainers" href="./trainers.html">Trainers</a>
+          <a data-nav="classes" href="./classes.html">Classes</a>
+          <a data-nav="bookings" href="./bookings.html">Bookings</a>
+          <a data-nav="payments" href="./payments.html">Payments</a>
+          <button data-logout>Logout</button>
+        </nav>
+      </header>
+
+      <div class="page-header">
+        <h1>Class Management</h1>
+        <p>Create, edit, and manage fitness classes.</p>
+      </div>
+
+      <section class="grid two">
+        <article class="card">
+          <h2 id="formTitle">Create Class</h2>
+          <div id="message"></div>
+          <form id="classForm" class="grid">
+            <input type="hidden" name="class_id" />
+            <div>
+              <label>Trainer</label>
+              <select name="trainer_id" id="trainerSelect" required></select>
+            </div>
+            <div>
+              <label>Class Name</label>
+              <input name="class_name" placeholder="e.g. Morning Yoga" required />
+            </div>
+            <div>
+              <label>Class Type</label>
+              <select name="class_type" required>
+                <option value="yoga">yoga</option>
+                <option value="pilates">pilates</option>
+                <option value="cardio">cardio</option>
+                <option value="strength">strength</option>
+                <option value="dance">dance</option>
+                <option value="CrossFit">CrossFit</option>
+                <option value="other">other</option>
+              </select>
+            </div>
+            <div>
+              <label>Schedule Day</label>
+              <select name="schedule_day" required>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+              </select>
+            </div>
+            <div class="grid two">
+              <div>
+                <label>Start Time</label>
+                <input type="time" name="start_time" required />
+              </div>
+              <div>
+                <label>End Time</label>
+                <input type="time" name="end_time" required />
+              </div>
+            </div>
+            <div class="grid two">
+              <div>
+                <label>Max Capacity</label>
+                <input type="number" min="1" name="max_capacity" required />
+              </div>
+              <div>
+                <label>Price Per Class (RM)</label>
+                <input type="number" step="0.01" min="0" name="price_per_class" required />
+              </div>
+            </div>
+            <div>
+              <label>Skill Level</label>
+              <select name="skill_level">
+                <option value="beginner">beginner</option>
+                <option value="intermediate" selected>intermediate</option>
+                <option value="advanced">advanced</option>
+              </select>
+            </div>
+            <div>
+              <label>Location</label>
+              <input name="location" placeholder="e.g. Studio A" />
+            </div>
+            <div>
+              <label>Description</label>
+              <textarea name="description" placeholder="Brief class description"></textarea>
+            </div>
+            <div class="row">
+              <button type="submit" id="submitBtn">Create Class</button>
+              <button type="button" class="secondary" id="cancelEditBtn" style="display: none;">Cancel Edit</button>
+            </div>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Class List</h2>
+          <div id="classList" class="list"></div>
+        </article>
+      </section>
+    </div>
+  </div>
+  <script type="module" src="./js/classes.js"></script>
+</body>
+
+</html>

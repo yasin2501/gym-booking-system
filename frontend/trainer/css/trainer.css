@@ -1,0 +1,16 @@
+/* Trainer portal accent overrides */
+.sidebar-nav a.active {
+  color: var(--ok);
+  background: var(--ok-bg);
+}
+
+.sidebar-nav a.active::before {
+  background: var(--ok);
+}
+
+.sidebar-brand h1 {
+  background: linear-gradient(135deg, var(--ok), #059669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

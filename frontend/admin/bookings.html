@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Bookings — IronCore Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="./css/admin.css" />
+</head>
+
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h1>IronCore Fitness</h1>
+        <small>Admin Panel</small>
+      </div>
+      <nav class="sidebar-nav">
+        <a data-nav="dashboard" href="./dashboard.html">Dashboard</a>
+        <a data-nav="users" href="./users.html">Users</a>
+        <a data-nav="trainers" href="./trainers.html">Trainers</a>
+        <a data-nav="classes" href="./classes.html">Classes</a>
+        <a data-nav="bookings" href="./bookings.html">Bookings</a>
+        <a data-nav="payments" href="./payments.html">Payments</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button data-logout>Sign Out</button>
+      </div>
+    </aside>
+
+    <div class="page-content">
+      <header class="topbar card" style="display:none;">
+        <div>
+          <div class="brand">Manage Bookings</div>
+        </div>
+        <nav class="nav">
+          <a data-nav="dashboard" href="./dashboard.html">Dashboard</a>
+          <a data-nav="users" href="./users.html">Users</a>
+          <a data-nav="trainers" href="./trainers.html">Trainers</a>
+          <a data-nav="classes" href="./classes.html">Classes</a>
+          <a data-nav="bookings" href="./bookings.html">Bookings</a>
+          <a data-nav="payments" href="./payments.html">Payments</a>
+          <button data-logout>Logout</button>
+        </nav>
+      </header>
+
+      <div class="page-header">
+        <h1>Booking Management</h1>
+        <p>All active classes and their booking records are listed below.</p>
+      </div>
+
+      <section class="card">
+        <h2>Bookings by Class</h2>
+        <div id="message"></div>
+        <div id="bookingList" class="list" style="margin-top: 14px;"></div>
+      </section>
+    </div>
+  </div>
+  <script type="module" src="./js/bookings.js"></script>
+</body>
+
+</html>
