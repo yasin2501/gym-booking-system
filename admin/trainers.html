@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Trainers — IronCore Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="./css/admin.css" />
+</head>
+
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h1>IronCore Fitness</h1>
+        <small>Admin Panel</small>
+      </div>
+      <nav class="sidebar-nav">
+        <a data-nav="dashboard" href="./dashboard.html">Dashboard</a>
+        <a data-nav="users" href="./users.html">Users</a>
+        <a data-nav="trainers" href="./trainers.html">Trainers</a>
+        <a data-nav="classes" href="./classes.html">Classes</a>
+        <a data-nav="bookings" href="./bookings.html">Bookings</a>
+        <a data-nav="payments" href="./payments.html">Payments</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button data-logout>Sign Out</button>
+      </div>
+    </aside>
+
+    <div class="page-content">
+      <header class="topbar card" style="display:none;">
+        <div>
+          <div class="brand">Manage Trainers</div>
+        </div>
+        <nav class="nav">
+          <a data-nav="dashboard" href="./dashboard.html">Dashboard</a>
+          <a data-nav="users" href="./users.html">Users</a>
+          <a data-nav="trainers" href="./trainers.html">Trainers</a>
+          <a data-nav="classes" href="./classes.html">Classes</a>
+          <a data-nav="bookings" href="./bookings.html">Bookings</a>
+          <a data-nav="payments" href="./payments.html">Payments</a>
+          <button data-logout>Logout</button>
+        </nav>
+      </header>
+
+      <div class="page-header">
+        <h1>Trainer Management</h1>
+        <p>Create and manage trainer accounts.</p>
+      </div>
+
+      <section class="grid two">
+        <article class="card">
+          <h2>Create Trainer</h2>
+          <div id="message"></div>
+          <form id="trainerForm">
+            <div>
+              <label>Existing User ID</label>
+              <input name="user_id" type="number" placeholder="Optional — link to existing user" />
+            </div>
+            <div>
+              <label>First Name</label>
+              <input name="first_name" placeholder="For new trainer user" />
+            </div>
+            <div>
+              <label>Last Name</label>
+              <input name="last_name" placeholder="For new trainer user" />
+            </div>
+            <div>
+              <label>Email</label>
+              <input name="email" type="email" placeholder="For new trainer user" />
+            </div>
+            <div>
+              <label>Password</label>
+              <input name="password" type="password" placeholder="For new trainer user" />
+            </div>
+            <div>
+              <label>Phone</label>
+              <input name="phone" placeholder="Optional" />
+            </div>
+            <div>
+              <label>Hourly Rate (RM)</label>
+              <input name="hourly_rate" type="number" step="0.01" placeholder="e.g. 50.00" required />
+            </div>
+            <div>
+              <label>Bio</label>
+              <textarea name="bio" placeholder="Brief description"></textarea>
+            </div>
+            <div>
+              <label>Specializations</label>
+              <textarea name="specializations" placeholder="Optional"></textarea>
+            </div>
+            <div>
+              <label>Certifications</label>
+              <textarea name="certifications" placeholder="Optional"></textarea>
+            </div>
+            <button type="submit">Create Trainer</button>
+          </form>
+        </article>
+        <article class="card">
+          <h2>Trainer List</h2>
+          <div id="trainerList" class="list"></div>
+        </article>
+      </section>
+    </div>
+  </div>
+  <script type="module" src="./js/trainers.js"></script>
+</body>
+
+</html>
